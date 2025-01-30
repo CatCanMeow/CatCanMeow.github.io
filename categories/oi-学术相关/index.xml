@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OI 学术相关 on 巴顿の鸽子窝</title>
+    <link>https://example.com/categories/oi-%E5%AD%A6%E6%9C%AF%E7%9B%B8%E5%85%B3/</link>
+    <description>Recent content in OI 学术相关 on 巴顿の鸽子窝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Jul 2024 20:01:20 +0800</lastBuildDate><atom:link href="https://example.com/categories/oi-%E5%AD%A6%E6%9C%AF%E7%9B%B8%E5%85%B3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[笔记] 时间复杂度与位运算</title>
+      <link>https://example.com/posts/time-complexity-and-bitwise-operation/</link>
+      <pubDate>Wed, 17 Jul 2024 20:01:20 +0800</pubDate>
+      
+      <guid>https://example.com/posts/time-complexity-and-bitwise-operation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[笔记] 二分答案</title>
+      <link>https://example.com/posts/binary-answer/</link>
+      <pubDate>Tue, 05 Mar 2024 19:09:02 +0800</pubDate>
+      
+      <guid>https://example.com/posts/binary-answer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[笔记] P1433</title>
+      <link>https://example.com/posts/p1433-notes/</link>
+      <pubDate>Sun, 14 Jan 2024 21:36:48 +0800</pubDate>
+      
+      <guid>https://example.com/posts/p1433-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[笔记] P1731</title>
+      <link>https://example.com/posts/p1731-notes/</link>
+      <pubDate>Sat, 13 Jan 2024 19:48:08 +0800</pubDate>
+      
+      <guid>https://example.com/posts/p1731-notes/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
