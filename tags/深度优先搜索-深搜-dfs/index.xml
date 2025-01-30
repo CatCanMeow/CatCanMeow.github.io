@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>深度优先搜索, 深搜, DFS on 巴顿の鸽子窝</title>
-    <link>https://example.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-%E6%B7%B1%E6%90%9C-dfs/</link>
+    <link>https://catcanmeow.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-%E6%B7%B1%E6%90%9C-dfs/</link>
     <description>Recent content in 深度优先搜索, 深搜, DFS on 巴顿の鸽子窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 14 Jan 2024 21:36:48 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-%E6%B7%B1%E6%90%9C-dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Jan 2024 21:36:48 +0800</lastBuildDate><atom:link href="https://catcanmeow.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-%E6%B7%B1%E6%90%9C-dfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[笔记] P1433</title>
-      <link>https://example.com/posts/p1433-notes/</link>
+      <link>https://catcanmeow.github.io/posts/p1433-notes/</link>
       <pubDate>Sun, 14 Jan 2024 21:36:48 +0800</pubDate>
       
-      <guid>https://example.com/posts/p1433-notes/</guid>
+      <guid>https://catcanmeow.github.io/posts/p1433-notes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>[笔记] P1731</title>
-      <link>https://example.com/posts/p1731-notes/</link>
+      <link>https://catcanmeow.github.io/posts/p1731-notes/</link>
       <pubDate>Sat, 13 Jan 2024 19:48:08 +0800</pubDate>
       
-      <guid>https://example.com/posts/p1731-notes/</guid>
+      <guid>https://catcanmeow.github.io/posts/p1731-notes/</guid>
       <description></description>
     </item>
     

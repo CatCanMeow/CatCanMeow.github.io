@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>巴顿の鸽子窝</title>
-    <link>https://example.com/</link>
+    <link>https://catcanmeow.github.io/</link>
     <description>Recent content on 巴顿の鸽子窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 22 Sep 2024 19:48:18 +0800</lastBuildDate>
     
-        <atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://catcanmeow.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>CSP-JS 2024 游记</title>
-        <link>https://example.com/posts/cspjs2024-travelogue/</link>
+        <link>https://catcanmeow.github.io/posts/cspjs2024-travelogue/</link>
         <pubDate>Sun, 22 Sep 2024 19:48:18 +0800</pubDate>
         
-        <guid>https://example.com/posts/cspjs2024-travelogue/</guid>
-        <description>巴顿の鸽子窝 https://example.com/posts/cspjs2024-travelogue/ -&lt;p&gt;本文发表在 &lt;a href=&#34;https://www.luogu.com.cn/article/tmtnacjb&#34;&gt;洛谷专栏&lt;/a&gt;、&lt;a href=&#34;https://zifanzhang.cn/posts/cspjs2024-travelogue/&#34;&gt;我的个人博客&lt;/a&gt;。两者同步更新。&lt;/p&gt;
+        <guid>https://catcanmeow.github.io/posts/cspjs2024-travelogue/</guid>
+        <description>巴顿の鸽子窝 https://catcanmeow.github.io/posts/cspjs2024-travelogue/ -&lt;p&gt;本文发表在 &lt;a href=&#34;https://www.luogu.com.cn/article/tmtnacjb&#34;&gt;洛谷专栏&lt;/a&gt;、&lt;a href=&#34;https://zifanzhang.cn/posts/cspjs2024-travelogue/&#34;&gt;我的个人博客&lt;/a&gt;。两者同步更新。&lt;/p&gt;
 &lt;p&gt;对于游记部分，初赛请通过文首（如果使用博客查看） / 侧边栏（如果使用洛谷专栏查看）TOC 跳至 0x00 节，复赛请跳至 0x?0 节（暂未更新）。&lt;/p&gt;
 &lt;p&gt;这其实并不完全是游记，其中还夹带着一些初复赛间的事情，你可以把它当作一篇日记集合来看。但是如果想纯享游记部分，请根据上段来跳至你所需要的内容。&lt;/p&gt;
 &lt;p&gt;我希望大家通过这篇文章看出我的真实水平。&lt;/p&gt;
@@ -119,18 +119,18 @@
 &lt;p&gt;晚上继续 ABC，11min 过掉 ABC 三题，然后 D 题因为是图然后不会就跑路了。但是排名不错，五千多名，perf 也比上周的高，加了 33 分，还算不错。&lt;/p&gt;
 &lt;p&gt;明天没有晚自习，因为要开家长会，然后后天上半天，上午开校运会。然后就会迎来 7 天半的愉快的国庆假期。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;以上内容完稿于 2024/9/29 0:10。&lt;/em&gt;&lt;/p&gt;
-- https://example.com/posts/cspjs2024-travelogue/ - </description>
+- https://catcanmeow.github.io/posts/cspjs2024-travelogue/ - </description>
         </item>
     
     
     
         <item>
         <title>[笔记] 时间复杂度与位运算</title>
-        <link>https://example.com/posts/time-complexity-and-bitwise-operation/</link>
+        <link>https://catcanmeow.github.io/posts/time-complexity-and-bitwise-operation/</link>
         <pubDate>Wed, 17 Jul 2024 20:01:20 +0800</pubDate>
         
-        <guid>https://example.com/posts/time-complexity-and-bitwise-operation/</guid>
-        <description>巴顿の鸽子窝 https://example.com/posts/time-complexity-and-bitwise-operation/ -&lt;h2 id=&#34;prologue&#34;&gt;Prologue&lt;/h2&gt;
+        <guid>https://catcanmeow.github.io/posts/time-complexity-and-bitwise-operation/</guid>
+        <description>巴顿の鸽子窝 https://catcanmeow.github.io/posts/time-complexity-and-bitwise-operation/ -&lt;h2 id=&#34;prologue&#34;&gt;Prologue&lt;/h2&gt;
 &lt;p&gt;这本来是洛谷网校前两课中两节的内容，我觉得很有意思，于是就拎出来单独发了。&lt;/p&gt;
 &lt;p&gt;其实主定理是第二课分治的时候讲的，但是很有趣，和时间复杂度也有关系，就归到第一节里面了。&lt;/p&gt;
 &lt;p&gt;但是主定理我无法完全理解，我只把我理解了的放了上去 awa&lt;/p&gt;
@@ -248,18 +248,18 @@ $$
 &lt;p&gt;我们把有 $x$ 这个元素表示为第 $x$ 位是 $1$。&lt;/p&gt;
 &lt;p&gt;那么操作 1 可以被理解为左移、右移，而操作 2 可以被理解为与、或、异或。&lt;/p&gt;
 &lt;p&gt;可以使用 &lt;code&gt;bitset&lt;/code&gt; 维护，但是 &lt;code&gt;bitset&lt;/code&gt; 的长度只能是一个定值，位移的时候无法保证元素被正确地抹去。所以可以再开一个 &lt;code&gt;bitset&lt;/code&gt;，长度相同，$0 \dots m - 1$ 为 $1$，其余为 $0$。每做位移后，将其与原 &lt;code&gt;bitset&lt;/code&gt; 做与运算。&lt;/p&gt;
-- https://example.com/posts/time-complexity-and-bitwise-operation/ - </description>
+- https://catcanmeow.github.io/posts/time-complexity-and-bitwise-operation/ - </description>
         </item>
     
     
     
         <item>
         <title>[笔记] 二分答案</title>
-        <link>https://example.com/posts/binary-answer/</link>
+        <link>https://catcanmeow.github.io/posts/binary-answer/</link>
         <pubDate>Tue, 05 Mar 2024 19:09:02 +0800</pubDate>
         
-        <guid>https://example.com/posts/binary-answer/</guid>
-        <description>巴顿の鸽子窝 https://example.com/posts/binary-answer/ -&lt;h2 id=&#34;简化题意&#34;&gt;简化题意&lt;/h2&gt;
+        <guid>https://catcanmeow.github.io/posts/binary-answer/</guid>
+        <description>巴顿の鸽子窝 https://catcanmeow.github.io/posts/binary-answer/ -&lt;h2 id=&#34;简化题意&#34;&gt;简化题意&lt;/h2&gt;
 &lt;p&gt;首先，给出这样的三道题：&lt;/p&gt;
 &lt;p&gt;T1:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -531,18 +531,18 @@ P1676 [USACO05FEB] Aggressive cows G&lt;/a&gt;）。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	printf(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%d&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, ans);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://example.com/posts/binary-answer/ - </description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://catcanmeow.github.io/posts/binary-answer/ - </description>
         </item>
     
     
     
         <item>
         <title>[笔记] P1433</title>
-        <link>https://example.com/posts/p1433-notes/</link>
+        <link>https://catcanmeow.github.io/posts/p1433-notes/</link>
         <pubDate>Sun, 14 Jan 2024 21:36:48 +0800</pubDate>
         
-        <guid>https://example.com/posts/p1433-notes/</guid>
-        <description>巴顿の鸽子窝 https://example.com/posts/p1433-notes/ -&lt;h2 id=&#34;题意简述&#34;&gt;题意简述&lt;/h2&gt;
+        <guid>https://catcanmeow.github.io/posts/p1433-notes/</guid>
+        <description>巴顿の鸽子窝 https://catcanmeow.github.io/posts/p1433-notes/ -&lt;h2 id=&#34;题意简述&#34;&gt;题意简述&lt;/h2&gt;
 &lt;p&gt;给定 $n$ 个点，求从 $(0, 0)$ 处出发遍历完所有的点的最短距离。&lt;/p&gt;
 &lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
 &lt;p&gt;先写输入和输出。我们用一个结构体 &lt;code&gt;node&lt;/code&gt; 来表示一个点。&lt;/p&gt;
@@ -721,18 +721,18 @@ P1676 [USACO05FEB] Aggressive cows G&lt;/a&gt;）。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-- https://example.com/posts/p1433-notes/ - </description>
+- https://catcanmeow.github.io/posts/p1433-notes/ - </description>
         </item>
     
     
     
         <item>
         <title>[笔记] P1731</title>
-        <link>https://example.com/posts/p1731-notes/</link>
+        <link>https://catcanmeow.github.io/posts/p1731-notes/</link>
         <pubDate>Sat, 13 Jan 2024 19:48:08 +0800</pubDate>
         
-        <guid>https://example.com/posts/p1731-notes/</guid>
-        <description>巴顿の鸽子窝 https://example.com/posts/p1731-notes/ -&lt;p&gt;本文全文忽略式中的 $\pi$，以保证总是用整数运算。&lt;/p&gt;
+        <guid>https://catcanmeow.github.io/posts/p1731-notes/</guid>
+        <description>巴顿の鸽子窝 https://catcanmeow.github.io/posts/p1731-notes/ -&lt;p&gt;本文全文忽略式中的 $\pi$，以保证总是用整数运算。&lt;/p&gt;
 &lt;h2 id=&#34;题意简述&#34;&gt;题意简述&lt;/h2&gt;
 &lt;p&gt;一个 $M$ 层蛋糕的体积为 $N$。&lt;/p&gt;
 &lt;p&gt;第 $i$ 层蛋糕的半径为 $R_i$， 高度为 $H_i$。并且从下往上一层比一层小，一层比一层薄。&lt;/p&gt;
@@ -930,7 +930,7 @@ $$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-- https://example.com/posts/p1731-notes/ - </description>
+- https://catcanmeow.github.io/posts/p1731-notes/ - </description>
         </item>
     
     
