@@ -1,57 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <title>[笔记] 时间复杂度与位运算 :: 巴顿の鸽子窝</title>
+<html lang="en"><head>
+<title>[笔记] 时间复杂度与位运算</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=5" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta
-  name="description"
-  content=""
-/>
-<meta
-  name="keywords"
-  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
-/>
-<meta name="robots" content="noodp" />
-<meta property="og:title" content="[笔记] 时间复杂度与位运算" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://example.com/posts/time-complexity-and-bitwise-operation/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-07-17T20:01:20+08:00" />
-<meta property="article:modified_time" content="2024-07-17T20:01:20+08:00" />
 
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="[笔记] 时间复杂度与位运算"/>
-<meta name="twitter:description" content=""/>
 
 
-<link rel="canonical" href="https://example.com/posts/time-complexity-and-bitwise-operation/" />
 
-<link rel="shortcut icon" href="/favicon2.ico" />
-<link rel="stylesheet" href="/css/index.min.00daf36bd5ee9fe1c553da346dd7a1d93bc97b5cf1fde7ddd1f4a5bd9b1901db.css">
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    renderMathInElement(document.body, {
-      
-      
-      delimiters: [
-        {left: '$$', right: '$$', display: true},
-        {left: '$', right: '$', display: false},
-        {left: '\\(', right: '\\)', display: false},
-        {left: '\\[', right: '\\]', display: true}
-      ],
-      
-      throwOnError : false
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
     });
-  });
 </script>
 
 
@@ -60,346 +74,468 @@
 
 
 
+
+
+
+
+
+
+
+
+
 </head>
-<body class="w-full bg-slate-50 dark:bg-gray-800">
-  <header class="flex flex-none justify-center z-10">
-    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
-  <div class="flex-none ml-2 md:ml-0">
-    <a href="/" class="">
-      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/logo.png" alt="logo">
-    </a>
-  </div>
-  <div class="flex-1"></div>
-  <div class="flex-none">
-    
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about/">
+                    关于
+                </a>
+                
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts/">
+                    文章
+                </a>
+                
+            
+            
+            <div class="toc">
 
 
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#prologue" class="nav-prologue">
+									Prologue
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%97%b6%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6" class="nav-时间复杂度">
+									时间复杂度
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%a4%a7-obig-oh%e8%a1%a8%e7%a4%ba%e6%b3%95" class="nav-大-obig-oh表示法">
+									大 O（Big-Oh）表示法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%af%b9%e6%95%b0" class="nav-对数">
+									对数
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b8%90%e8%bf%9b%e6%97%b6%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6%e7%9a%84%e5%87%a0%e7%a7%8d%e8%a1%a8%e7%a4%ba" class="nav-渐进时间复杂度的几种表示">
+									渐进时间复杂度的几种表示
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%bb%e5%ae%9a%e7%90%86master-theorem" class="nav-主定理master-theorem">
+									主定理（Master Theorem）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9d%82%e9%a1%b9" class="nav-杂项">
+									杂项
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%8d%e8%bf%90%e7%ae%97" class="nav-位运算">
+									位运算
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%88%b6%e7%ba%a6" class="nav-制约">
+									制约
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%80%bb%e8%be%91%e8%bf%90%e7%ae%97" class="nav-逻辑运算">
+									逻辑运算
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%8d%e8%bf%90%e7%ae%97-1" class="nav-位运算-1">
+									位运算
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8d%95%e7%82%b9%e4%bf%ae%e6%94%b9" class="nav-单点修改">
+									单点修改
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%8d%e8%bf%90%e7%ae%97%e4%b8%8e%e9%9b%86%e5%90%88" class="nav-位运算与集合">
+									位运算与集合
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#bitset" class="nav-bitset">
+									bitset
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#b3695-%e9%9b%86%e5%90%88%e8%bf%90%e7%ae%97-3" class="nav-b3695-集合运算-3">
+									B3695 集合运算 3
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
 
-<nav class="h-full static">
-  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
-    <span class="sr-only">Open main menu</span>
-    <i class="w-8 h-8">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 6l16 0" />
-  <path d="M4 12l16 0" />
-  <path d="M4 18l16 0" />
-</svg>
-
-    </i>
-  </button>
-  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
-    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-sm md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
-    
-        <li id="about" class="">
-          <a class="block px-3 py-3 hover:text-emerald-600"
-            href="/about/" title="About">About</a>
-        </li>
-      
-    
-        <li id="post" class="">
-          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
-            href="/posts/" title="Post">Post</a>
-        </li>
-      
-    
-    </ul>
-  </div>
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://example.com/">
+            巴顿の鸽子窝
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
 </nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://example.com/">
+        <div class="single-column-header-title">巴顿の鸽子窝</div>
+        
 
-
-  </div>
-  
-  <div class="flex-none mx-1"></div>
-  
-  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
-    <label for="darkmode-toggle" class="flex items-center px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
-      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
-      <div class="group flex flex-row gap-1 justify-center h-8 px-1 rounded-full bg-white dark:bg-gray-700">
-        <i class="h-6 w-6 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:group-[]:invisible">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-   <path d="M12 5l0 .01"></path>
-   <path d="M17 7l0 .01"></path>
-   <path d="M19 12l0 .01"></path>
-   <path d="M17 17l0 .01"></path>
-   <path d="M12 19l0 .01"></path>
-   <path d="M7 17l0 .01"></path>
-   <path d="M5 12l0 .01"></path>
-   <path d="M7 7l0 .01"></path>
-</svg>
-
-        </i>
-        <i class="h-6 w-6 flex-none rounded-full place-self-center invisible peer-checked:group-[]:visible">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
-   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
-   <path d="M19 11h2m-1 -1v2"></path>
-</svg>
-
-        </i>
-      </div>
-    </label>
-  </div>
+    </a>
 </div>
 
-  </header>
-  <main class="flex flex-auto justify-center">
-    
-<div class="w-full max-w-4xl lg:max-w-5xl">
-  <div class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700">
-    <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
-      <a href="/posts/time-complexity-and-bitwise-operation/">[笔记] 时间复杂度与位运算</a>
-    </h1>
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
 
-    
-    
-  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
-    
-      
-      <li>
-        <a href="/categories/oi-%E5%AD%A6%E6%9C%AF%E7%9B%B8%E5%85%B3/"
-          class="text-sm mr-2 px-2 py-1 rounded border border-emerald-800 bg-emerald-800 text-slate-50">
-          OI 学术相关
-        </a>
-      </li>
-      
-    
-    
-      
-      <li>
-        <a href="/tags/%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/"
-          class="flex flex-row text-sm mr-2 py-1">
-          <i class="h-5 w-5 flex-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M5 9l14 0"></path>
-   <path d="M5 15l14 0"></path>
-   <path d="M11 4l-4 16"></path>
-   <path d="M17 4l-4 16"></path>
-</svg>
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
 
-          </i>
-          <span class="ml-0">算法思想</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"
-          class="flex flex-row text-sm mr-2 py-1">
-          <i class="h-5 w-5 flex-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M5 9l14 0"></path>
-   <path d="M5 15l14 0"></path>
-   <path d="M11 4l-4 16"></path>
-   <path d="M17 4l-4 16"></path>
-</svg>
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('/posts/time-complexity-and-bitwise-operation/headimg.jpg')"
+                    
+                
+            >
+                <div class="post-title">
+                    [笔记] 时间复杂度与位运算
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-07-17 20:01
+                        </time>
+                        
 
-          </i>
-          <span class="ml-0">时间复杂度</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/tags/%E5%AF%B9%E6%95%B0/"
-          class="flex flex-row text-sm mr-2 py-1">
-          <i class="h-5 w-5 flex-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M5 9l14 0"></path>
-   <path d="M5 15l14 0"></path>
-   <path d="M11 4l-4 16"></path>
-   <path d="M17 4l-4 16"></path>
-</svg>
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[OI 学术相关]</a>
+                                &nbsp;
+                        
 
-          </i>
-          <span class="ml-0">对数</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/tags/%E4%B8%BB%E5%AE%9A%E7%90%86/"
-          class="flex flex-row text-sm mr-2 py-1">
-          <i class="h-5 w-5 flex-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M5 9l14 0"></path>
-   <path d="M5 15l14 0"></path>
-   <path d="M11 4l-4 16"></path>
-   <path d="M17 4l-4 16"></path>
-</svg>
-
-          </i>
-          <span class="ml-0">主定理</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"
-          class="flex flex-row text-sm mr-2 py-1">
-          <i class="h-5 w-5 flex-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M5 9l14 0"></path>
-   <path d="M5 15l14 0"></path>
-   <path d="M11 4l-4 16"></path>
-   <path d="M17 4l-4 16"></path>
-</svg>
-
-          </i>
-          <span class="ml-0">位运算</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/tags/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97/"
-          class="flex flex-row text-sm mr-2 py-1">
-          <i class="h-5 w-5 flex-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M5 9l14 0"></path>
-   <path d="M5 15l14 0"></path>
-   <path d="M11 4l-4 16"></path>
-   <path d="M17 4l-4 16"></path>
-</svg>
-
-          </i>
-          <span class="ml-0">逻辑运算</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/tags/%E9%9B%86%E5%90%88/"
-          class="flex flex-row text-sm mr-2 py-1">
-          <i class="h-5 w-5 flex-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M5 9l14 0"></path>
-   <path d="M5 15l14 0"></path>
-   <path d="M11 4l-4 16"></path>
-   <path d="M17 4l-4 16"></path>
-</svg>
-
-          </i>
-          <span class="ml-0">集合</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/tags/%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93-stl/"
-          class="flex flex-row text-sm mr-2 py-1">
-          <i class="h-5 w-5 flex-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M5 9l14 0"></path>
-   <path d="M5 15l14 0"></path>
-   <path d="M11 4l-4 16"></path>
-   <path d="M17 4l-4 16"></path>
-</svg>
-
-          </i>
-          <span class="ml-0">标准模板库, STL</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/tags/bitset/"
-          class="flex flex-row text-sm mr-2 py-1">
-          <i class="h-5 w-5 flex-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M5 9l14 0"></path>
-   <path d="M5 15l14 0"></path>
-   <path d="M11 4l-4 16"></path>
-   <path d="M17 4l-4 16"></path>
-</svg>
-
-          </i>
-          <span class="ml-0">bitset</span>
-        </a>
-      </li>
-      
-    
-  </ul>
-
-
-
-    <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
-  
-  
-  <div class="flex flex-row text-base gap-x-1">
-    <i class="h-6 w-6 flex-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
-   <path d="M16 3v4"></path>
-   <path d="M8 3v4"></path>
-   <path d="M4 11h16"></path>
-   <path d="M11 15h1"></path>
-   <path d="M12 15v3"></path>
-</svg>
-
-    </i>
-    <time datetime="2024-07-17T20:01:20&#43;08:00">
-      2024-07-17
-    </time>
-  </div>
-
-  <div class="flex flex-row text-base gap-x-1">
-    <i class="h-6 w-6 flex-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M6.5 7h11"></path>
-   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
-   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
-</svg>
-
-    </i>
-    <span>
-      2 minutes to read
-    </span>
-  </div>
-</div>
-
-
-    
-      
-      <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
-        <h2>Table of Contents</h2>
-        <aside><nav id="TableOfContents">
-  <ul>
-    <li><a href="#prologue">Prologue</a></li>
-    <li><a href="#时间复杂度">时间复杂度</a>
-      <ul>
-        <li><a href="#大-obig-oh表示法">大 O（Big-Oh）表示法</a></li>
-        <li><a href="#对数">对数</a></li>
-        <li><a href="#渐进时间复杂度的几种表示">渐进时间复杂度的几种表示</a></li>
-        <li><a href="#主定理master-theorem">主定理（Master Theorem）</a></li>
-        <li><a href="#杂项">杂项</a></li>
-      </ul>
-    </li>
-    <li><a href="#位运算">位运算</a>
-      <ul>
-        <li><a href="#制约">制约</a></li>
-        <li><a href="#逻辑运算">逻辑运算</a></li>
-        <li><a href="#位运算-1">位运算</a></li>
-        <li><a href="#单点修改">单点修改</a></li>
-        <li><a href="#位运算与集合">位运算与集合</a></li>
-        <li><a href="#bitset"><code>bitset</code></a></li>
-        <li><a href="#b3695-集合运算-3">B3695 集合运算 3</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></aside>
-      </section>
-      
-    
-
-    <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
-      <h2 id="prologue">Prologue</h2>
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3">算法思想</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">时间复杂度</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E5%AF%B9%E6%95%B0">对数</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E4%B8%BB%E5%AE%9A%E7%90%86">主定理</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97">位运算</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97">逻辑运算</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E9%9B%86%E5%90%88">集合</a>
+                                &nbsp;
+                            
+                                <a href="/tags/%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93-stl">标准模板库, STL</a>
+                                &nbsp;
+                            
+                                <a href="/tags/bitset">bitset</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h2 id="prologue">Prologue</h2>
 <p>这本来是洛谷网校前两课中两节的内容，我觉得很有意思，于是就拎出来单独发了。</p>
 <p>其实主定理是第二课分治的时候讲的，但是很有趣，和时间复杂度也有关系，就归到第一节里面了。</p>
 <p>但是主定理我无法完全理解，我只把我理解了的放了上去 awa</p>
@@ -464,39 +600,11 @@ $$
 </ol>
 <h3 id="逻辑运算">逻辑运算</h3>
 <ul>
-<li>与：<div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/time-complexity-and-bitwise-operation/logic-image/and_hu5f9822343b3392c268e16ed2f4d73840_6963_640x0_resize_q75_bgffffff_box_3.jpg" width="286" height="72" alt="" title="" loading="lazy" />
-  </picture>
-</div>
-</li>
-<li>或：<div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/time-complexity-and-bitwise-operation/logic-image/or_hu84309eb6dcc50fa53e507b10a10b64a9_7092_640x0_resize_q75_bgffffff_box_3.jpg" width="283" height="67" alt="" title="" loading="lazy" />
-  </picture>
-</div>
-<br>
+<li>与：$x \land y = \begin{cases}1&amp;x, y = 1\newline 0&amp;\text{otherwise.}\end{cases}$</li>
+<li>或：$x \lor y = \begin{cases}0&amp;x, y = 0\newline 1&amp;\text{otherwise.}\end{cases}$<br>
 换言之，$x, y$ 中有一个是 $1$ 就为 $1$。</li>
-<li>异或：<div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/time-complexity-and-bitwise-operation/logic-image/xor_hu21e20b4a83f713b162bf331045560de8_5644_640x0_resize_q75_bgffffff_box_3.jpg" width="246" height="64" alt="" title="" loading="lazy" />
-  </picture>
-</div>
-</li>
-<li>非：<div class="not-prose">
-<picture>
-    <source type="image/webp" srcset="" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <source type="image/jpeg" srcset="" sizes="(min-width: 1024px) 100vw, 50vw" />
-    <img class="h-auto max-w-full rounded-lg" src="/posts/time-complexity-and-bitwise-operation/logic-image/not_hu4495e1d6a8cd48f13a6cb8a0b4b5e4de_4172_640x0_resize_q75_bgffffff_box_3.jpg" width="219" height="67" alt="" title="" loading="lazy" />
-  </picture>
-</div>
-</li>
+<li>异或：$x \oplus y = \begin{cases}1&amp;x \ne y \newline 0&amp;x=y.\end{cases}$</li>
+<li>非：$\neg x = \begin{cases}1&amp;x = 0 \newline 0&amp;x = 1.\end{cases}$</li>
 </ul>
 <h3 id="位运算-1">位运算</h3>
 <ul>
@@ -546,54 +654,447 @@ $$
 <p>那么操作 1 可以被理解为左移、右移，而操作 2 可以被理解为与、或、异或。</p>
 <p>可以使用 <code>bitset</code> 维护，但是 <code>bitset</code> 的长度只能是一个定值，位移的时候无法保证元素被正确地抹去。所以可以再开一个 <code>bitset</code>，长度相同，$0 \dots m - 1$ 为 $1$，其余为 $0$。每做位移后，将其与原 <code>bitset</code> 做与运算。</p>
 
-    </article>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2024-07-17</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/cspjs2024-travelogue/">
+			Next<br>CSP-JS 2024 游记
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/binary-answer/">
+			Previous<br>[笔记] 二分答案
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://example.com/">
+    
+        <div class="nav-title">
+            巴顿の鸽子窝
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about/">
+                关于
+            </a>
+            
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts/">
+                文章
+            </a>
+            
+        
+    </div>
 
     
 
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2024 巴顿の鸽子窝
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
 
 
-  </div>
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#prologue" class="nav-prologue">
+									Prologue
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%97%b6%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6" class="nav-时间复杂度">
+									时间复杂度
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%a4%a7-obig-oh%e8%a1%a8%e7%a4%ba%e6%b3%95" class="nav-大-obig-oh表示法">
+									大 O（Big-Oh）表示法
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%af%b9%e6%95%b0" class="nav-对数">
+									对数
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%b8%90%e8%bf%9b%e6%97%b6%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6%e7%9a%84%e5%87%a0%e7%a7%8d%e8%a1%a8%e7%a4%ba" class="nav-渐进时间复杂度的几种表示">
+									渐进时间复杂度的几种表示
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%b8%bb%e5%ae%9a%e7%90%86master-theorem" class="nav-主定理master-theorem">
+									主定理（Master Theorem）
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9d%82%e9%a1%b9" class="nav-杂项">
+									杂项
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%8d%e8%bf%90%e7%ae%97" class="nav-位运算">
+									位运算
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%88%b6%e7%ba%a6" class="nav-制约">
+									制约
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%80%bb%e8%be%91%e8%bf%90%e7%ae%97" class="nav-逻辑运算">
+									逻辑运算
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%8d%e8%bf%90%e7%ae%97-1" class="nav-位运算-1">
+									位运算
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8d%95%e7%82%b9%e4%bf%ae%e6%94%b9" class="nav-单点修改">
+									单点修改
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%8d%e8%bf%90%e7%ae%97%e4%b8%8e%e9%9b%86%e5%90%88" class="nav-位运算与集合">
+									位运算与集合
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#bitset" class="nav-bitset">
+									bitset
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#b3695-%e9%9b%86%e5%90%88%e8%bf%90%e7%ae%97-3" class="nav-b3695-集合运算-3">
+									B3695 集合运算 3
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
 </div>
 
-  </main>
-  <footer class="flex flex-none justify-center">
-    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
-  <div class="flex flex-row">
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2024 巴顿の鸽子窝
+	
+</div>
+            </div>
     
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-  </div>
-  <div class="grow"></div>
-  <div class="flex flex-row">
-    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
-</svg>
-</i> 2024 
-    
-  </div>
-  
-  <div class="flex flex-row">
-    <span class="ml-0 pl-0 md:ml-2 md:pl-2 border-l-0 md:border-l border-slate-300 dark:border-slate-400">
-      Powered by <a href="https://gohugo.io" target="_blank" rel="noopener" class="underline">Hugo</a> <span class="text-red-600">&hearts;</span> <a href="https://github.com/tomowang/hugo-theme-tailwind" target="_blank" rel="noopener" class="underline">Tailwind</a>
-    </span>
-  </div>
-  
-</section>
-
-  </footer><script src="/main.min.c6372b6836971865bd94bfde974748aca8415824a2facab6ccd66a87384bfacb.js"></script>
-
-</body>
+    <script src="/js/journal.js"></script></body>
 </html>

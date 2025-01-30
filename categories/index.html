@@ -1,34 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <title>Categories :: 巴顿の鸽子窝</title>
+<html lang="en"><head>
+<title>Categories</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=5" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta
-  name="description"
-  content=""
-/>
-<meta
-  name="keywords"
-  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
-/>
-<meta name="robots" content="noodp" />
-<meta property="og:title" content="Categories" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://example.com/categories/" />
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Categories"/>
-<meta name="twitter:description" content=""/>
 
 
-<link rel="canonical" href="https://example.com/categories/" />
 
-<link rel="shortcut icon" href="/favicon2.ico" />
-<link rel="stylesheet" href="/css/index.min.00daf36bd5ee9fe1c553da346dd7a1d93bc97b5cf1fde7ddd1f4a5bd9b1901db.css">
+
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -39,166 +62,194 @@
 
 
 </head>
-<body class="w-full bg-slate-50 dark:bg-gray-800">
-  <header class="flex flex-none justify-center z-10">
-    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
-  <div class="flex-none ml-2 md:ml-0">
-    <a href="/" class="">
-      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/logo.png" alt="logo">
-    </a>
-  </div>
-  <div class="flex-1"></div>
-  <div class="flex-none">
-    
-
-
-
-<nav class="h-full static">
-  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
-    <span class="sr-only">Open main menu</span>
-    <i class="w-8 h-8">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 6l16 0" />
-  <path d="M4 12l16 0" />
-  <path d="M4 18l16 0" />
-</svg>
-
-    </i>
-  </button>
-  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
-    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-sm md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
-    
-        <li id="about" class="">
-          <a class="block px-3 py-3 hover:text-emerald-600"
-            href="/about/" title="About">About</a>
-        </li>
-      
-    
-        <li id="post" class="">
-          <a class="block px-3 py-3 hover:text-emerald-600"
-            href="/posts/" title="Post">Post</a>
-        </li>
-      
-    
-    </ul>
-  </div>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about/">
+                    关于
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/posts/">
+                    文章
+                </a>
+                
+            
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://example.com/">
+            巴顿の鸽子窝
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
 </nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://example.com/">
+        <div class="single-column-header-title">巴顿の鸽子窝</div>
+        
 
+    </a>
+</div>
 
-  </div>
-  
-  <div class="flex-none mx-1"></div>
-  
-  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
-    <label for="darkmode-toggle" class="flex items-center px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
-      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
-      <div class="group flex flex-row gap-1 justify-center h-8 px-1 rounded-full bg-white dark:bg-gray-700">
-        <i class="h-6 w-6 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:group-[]:invisible">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-   <path d="M12 5l0 .01"></path>
-   <path d="M17 7l0 .01"></path>
-   <path d="M19 12l0 .01"></path>
-   <path d="M17 17l0 .01"></path>
-   <path d="M12 19l0 .01"></path>
-   <path d="M7 17l0 .01"></path>
-   <path d="M5 12l0 .01"></path>
-   <path d="M7 7l0 .01"></path>
-</svg>
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
 
-        </i>
-        <i class="h-6 w-6 flex-none rounded-full place-self-center invisible peer-checked:group-[]:visible">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
-   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
-   <path d="M19 11h2m-1 -1v2"></path>
-</svg>
-
-        </i>
+<div class="post-list-container post-list-container-shadow">
+  <a class="a-block">
+    <div class="post-item-wrapper post-item-wrapper-no-hover">
+      <div class="post-item post-item-no-gaps">
+        <div class="post-item-info-wrapper">
+          <div class="post-item-title post-item-title-small">
+            Categories
+          </div>
+        </div>
       </div>
-    </label>
+    </div>
+  </a>
+  <div class="tags">
+    
+    <div class="tag">
+      <a href="/categories/oi-%E5%AD%A6%E6%9C%AF%E6%97%A0%E5%85%B3/" class="btn btn-outline-secondary position-relative rounded-pill">
+        OI 学术无关
+        <span class="badge">(1)</span>
+      </a>
+    </div>
+    
+    <div class="tag">
+      <a href="/categories/oi-%E5%AD%A6%E6%9C%AF%E7%9B%B8%E5%85%B3/" class="btn btn-outline-secondary position-relative rounded-pill">
+        OI 学术相关
+        <span class="badge">(4)</span>
+      </a>
+    </div>
+    
   </div>
 </div>
 
-  </header>
-  <main class="flex flex-auto justify-center">
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
     
-  
-  <div class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700 w-full max-w-4xl lg:max-w-5xl">
-    <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-200">
-      <a href="/categories/">Categories</a>
-    </h1>
-    <ul class="flex flex-col gap-3">
-      
+    <a class="a-block nav-head false" href="https://example.com/">
+    
+        <div class="nav-title">
+            巴顿の鸽子窝
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
         
         
-        
-          <li class="">
-            <a href="/categories/oi-%E5%AD%A6%E6%9C%AF%E7%9B%B8%E5%85%B3/"
-              class="flex flex-row text-slate-600 dark:text-slate-300 backdrop-blur">
-              <span class="text-lg mr-2">oi-学术相关</span>
-              <span class="self-center rounded-full text-xs px-2 bg-red-400 text-white">4</span>
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about/">
+                关于
             </a>
-          </li>
+            
         
-      
-        
-        
-        
-          <li class="">
-            <a href="/categories/oi-%E5%AD%A6%E6%9C%AF%E6%97%A0%E5%85%B3/"
-              class="flex flex-row text-slate-600 dark:text-slate-300 backdrop-blur">
-              <span class="text-lg mr-2">oi-学术无关</span>
-              <span class="self-center rounded-full text-xs px-2 bg-red-400 text-white">1</span>
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/posts/">
+                文章
             </a>
-          </li>
+            
         
-      
-    </ul>
-  </div>
+    </div>
 
-  </main>
-  <footer class="flex flex-none justify-center">
-    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
-  <div class="flex flex-row">
     
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
 
-  </div>
-  <div class="grow"></div>
-  <div class="flex flex-row">
-    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
-</svg>
-</i> 2024 
+&copy;
+	
+	2024 巴顿の鸽子窝
+	
+
+    </div>
     
-  </div>
-  
-  <div class="flex flex-row">
-    <span class="ml-0 pl-0 md:ml-2 md:pl-2 border-l-0 md:border-l border-slate-300 dark:border-slate-400">
-      Powered by <a href="https://gohugo.io" target="_blank" rel="noopener" class="underline">Hugo</a> <span class="text-red-600">&hearts;</span> <a href="https://github.com/tomowang/hugo-theme-tailwind" target="_blank" rel="noopener" class="underline">Tailwind</a>
-    </span>
-  </div>
-  
-</section>
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
 
-  </footer><script src="/main.min.c6372b6836971865bd94bfde974748aca8415824a2facab6ccd66a87384bfacb.js"></script>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
 
-</body>
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2024 巴顿の鸽子窝
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
 </html>
